@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask,render_template
 
 
 app = Flask(__name__)
@@ -28,7 +28,9 @@ app.add_url_rule("/define",'define',define2)
 def html():
     return '<html> <body> <h1> Hello How are you?</h1> </body> </html>'
 
-
+@app.route('/render')
+def render():
+    return render_template('message.html')
 
 
 if __name__=="__main__":
